@@ -13,7 +13,7 @@
   <node pkg="viewpoint_estimation" type="viewpoint_estimation" name="viewpoint_estimation" output="screen">
    <remap from="/image_raw" to="/usb_cam/image_raw" />
   <rosparam>
-     calibration_file: "/home/durovsky/catkin_ws/src/OpenCV_Library/viewpoint_estimation/data/canyonfwc120_calibration.txt"      
+      calibration_file: "/home/minliu/dvsws/src/marker_pose_detection/data/canyonfwc120_calibration.txt"      
   </rosparam>
   </node>
  </launch>
