@@ -106,6 +106,17 @@ ViewPoint_Estimator::image_callback(const sensor_msgs::ImageConstPtr &original_i
 
 }
 
+void ViewPoint_Estimator::image_read_manual(int i)
+{
+    cv::Mat input_image;
+    std::string imageFn;
+    imageFn = "/home/minliu/opencv_github/opencv/samples/data/left0" + std::to_string(i+1) + ".jpg";
+    input_image = imread(imageFn, cv::IMREAD_GRAYSCALE);
+    bool found = chessboard_find_pattern(input_image,input_image);
+    imshow("RGB", input_image);
+    cv::waitKey(10);
+}
+
 bool
 ViewPoint_Estimator::chessboard_find_pattern(cv::Mat input_image, cv::Mat output_image)
 {

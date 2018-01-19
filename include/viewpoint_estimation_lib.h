@@ -42,6 +42,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <visualization_msgs/Marker.h>
 
 //Aruco headers
@@ -69,6 +70,7 @@ public:
     bool load_calibration_file(std::string filename);
     void image_callback(const sensor_msgs::ImageConstPtr &original_image);
 
+    void image_read_manual(int i);
     bool chessboard_find_pattern(cv::Mat input_image, cv::Mat output_image);
     bool markers_find_pattern(cv::Mat input_image, cv::Mat output_image);
   

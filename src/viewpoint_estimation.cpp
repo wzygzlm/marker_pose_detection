@@ -46,6 +46,16 @@ main(int argc, char *argv[])
   image_transport::ImageTransport it(nh);
   image_transport::Subscriber sub = it.subscribe("/image_raw", 1, &ViewPoint_Estimator::image_callback, &est);
 
+  int i = 0;
+  while (ros::ok())
+  {
+      if (i >= 9)
+      {
+          i = 0;
+      }
+      est.image_read_manual(i);
+      i++;
+  }
   ros::spin();
 
   return(EXIT_SUCCESS);
